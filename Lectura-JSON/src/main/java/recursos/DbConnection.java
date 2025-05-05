@@ -8,7 +8,7 @@ public class DbConnection {
     public static Connection getConnection() {
         String url = "jdbc:mysql://localhost:3306/naturprintdb";
         String user = "root";
-        String password = "x!";
+        String password = "123456789";
 
         try {
             return DriverManager.getConnection(url, user, password);

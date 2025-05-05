@@ -1,5 +1,6 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
+import recursos.CSVExporter;
 import recursos.DbConnection;
 
 import java.sql.Connection;
@@ -31,6 +32,10 @@ public class Entrada {
         } else {
             System.out.println("No se pudieron obtener productos.");
         }
+
+        String csvPath = "productos.csv";
+        CSVExporter.exportToCSV(csvPath);
+
 
     }
 }
