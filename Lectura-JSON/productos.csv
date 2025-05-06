@@ -1,1 +1,6 @@
-numero,fecha_lanzada,cliente,cantidad,trabajo,familia,fecha_entrega,notas
+code,clientName,description,comentario
+25001001,CLIENTES VARIOS,1000 uds. de Flyer para CLIENTES VARIOS,probando en ot
+25001002,CLIENTES VARIOS,1100 uds. de Flyer para CLIENTES VARIOS,probando en ot
+25001003,CLIENTES VARIOS,1200 uds. de Flyer para CLIENTES VARIOS,probando en ot
+25001004,CLIENTES VARIOS,1300 uds. de Flyer para CLIENTES VARIOS,probando en ot
+25001005,CLIENTES VARIOS,1400 uds. de Flyer para CLIENTES VARIOS,probando en ot

@@ -34,9 +34,21 @@ public class Entrada {
         }
 
         String csvPath = "productos.csv";
-        CSVExporter.exportToCSV(csvPath);
 
 
+        JSONArray filtrados = new JSONArray();
+
+        for (int i = 0; i < productos.length(); i++) {
+            JSONObject producto = productos.getJSONObject(i);
+            if (producto.has("comment")) {
+                String comentario = producto.getString("comment").toLowerCase();
+                if (comentario.equals("probando en ot")) {
+                    filtrados.put(producto); // Lo agregamos a la lista de filtrados
+                    System.out.println("Producto " + i + ": " + producto.toString(2));
+                }
+            }
+        }
+        CSVExporter.exportToCSV(csvPath, filtrados);
     }
 }
 
