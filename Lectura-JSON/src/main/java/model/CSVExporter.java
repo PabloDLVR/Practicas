@@ -18,7 +18,6 @@ public class CSVExporter {
                 String comentario = producto.optString("comment", "");
                 writer.printf("%s,%s,%s%n", id, cliente, comentario);
             }
-
             System.out.println("✅ CSV exportado correctamente.");
         } catch (Exception e) {
             e.printStackTrace();

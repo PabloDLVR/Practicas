@@ -9,6 +9,18 @@ public class Entrada {
     public static void main(String[] args) {
         String url = "https://raw.githubusercontent.com/PabloDLVR/Practicas/06f8fb240bc2ad96a50aa31d5f5d4d99b1badbf6/ordenes_generadas_completo.json";
         JSONArray productos = JsonReadeer.obtenerProductosDesdeUrl(url);
+        JSONArray filtrados = new JSONArray();
+
+        for (int i = 0; i < productos.length(); i++) {
+            JSONObject producto = productos.getJSONObject(i);
+            if (producto.has("comment")) {
+                String comentario = producto.getString("comment").toLowerCase();
+                if (comentario.equals("probando en ot")) {
+                    filtrados.put(producto); // Lo agregamos a la lista de filtrados
+                    System.out.println("Producto " + i + ": " + producto.toString(2));
+                }
+            }
+        }
 
         Connection conn = DbConnection.getConnection();
         if (conn != null) {
@@ -34,7 +46,7 @@ public class Entrada {
         }
 
         String csvPath = "productos.csv";
-        CSVExporter.exportToCSV(csvPath);
+        CSVExporter.exportToCSV(csvPath, filtrados);
 
 
     }

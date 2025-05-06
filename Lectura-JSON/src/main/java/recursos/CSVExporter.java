@@ -1,11 +1,13 @@
 package recursos;
 
+import org.json.JSONArray;
+
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.sql.*;
 
 public class CSVExporter {
-    public static void exportToCSV(String filePath) {
+    public static void exportToCSV(String filePath, JSONArray filtrados) {
         String url = "jdbc:mysql://localhost:3306/naturprintdb";
         String user = "root";
         String password = "123456789";
