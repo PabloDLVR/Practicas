@@ -10,6 +10,7 @@ public class Entrada {
         String url = "https://raw.githubusercontent.com/PabloDLVR/Practicas/06f8fb240bc2ad96a50aa31d5f5d4d99b1badbf6/ordenes_generadas_completo.json";
         JSONArray productos = JsonReadeer.obtenerProductosDesdeUrl(url);
 
+<<<<<<< Updated upstream
         Connection conn = DbConnection.getConnection();
         if (conn != null) {
             System.out.println("✅ Conexión exitosa");
@@ -17,6 +18,8 @@ public class Entrada {
             System.out.println("❌ Error de conexión");
         }
 
+=======
+>>>>>>> Stashed changes
         if (productos != null) {
             for (int i = 0; i < productos.length(); i++) {
                 JSONObject producto = productos.getJSONObject(i);
@@ -31,6 +34,7 @@ public class Entrada {
             }
         } else {
             System.out.println("No se pudieron obtener productos.");
+<<<<<<< Updated upstream
         }
 
         String csvPath = "productos.csv";
@@ -47,8 +51,9 @@ public class Entrada {
                     System.out.println("Producto " + i + ": " + producto.toString(2));
                 }
             }
+=======
+>>>>>>> Stashed changes
         }
         CSVExporter.exportToCSV(csvPath, filtrados);
     }
 }
-
